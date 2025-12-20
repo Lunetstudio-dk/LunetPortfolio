@@ -1,0 +1,21 @@
+{
+  "name": "LunetPortfolio",
+  "version": "1.0.0",
+  "description": "Shopify theme development",
+  "scripts": {
+    "dev": "shopify theme dev",
+    "build": "shopify theme build",
+    "deploy": "shopify theme deploy"
+  },
+  "keywords": [
+    "shopify",
+    "theme"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0",
+    "@shopify/theme": "^3.0.0"
+  }
+}
+
