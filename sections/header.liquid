@@ -518,7 +518,7 @@
       column-gap: 0;
       align-items: center;
       padding-block: 0;
-      padding-inline: 0 var(--padding-3xs);
+      padding-inline: 0;
 
       .header-logo {
         grid-area: center;
@@ -585,7 +585,7 @@
 
   /* Set header paddings based on height setting */
   .header {
-    --header-padding: var(--padding-sm);
+    --header-padding: 0px;
     --font-paragraph--line-height: 1;
     contain: layout style;
   }
@@ -595,16 +595,16 @@
   }
 
   .header.header--compact {
-    --header-padding: var(--padding-2xs);
+    --header-padding: 0px;
   }
 
   .header__columns {
-    --padding-block-start: var(--header-padding);
-    --padding-block-end: var(--header-padding);
+    --padding-block-start: 0px;
+    --padding-block-end: 0px;
   }
 
   .header:not(.header--compact) .header__row--bottom {
-    --header-padding: var(--padding-xs);
+    --header-padding: 0px;
   }
 
   .header--collapse-row-paddings {

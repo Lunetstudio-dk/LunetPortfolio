@@ -375,7 +375,7 @@
 
 <div
   id="Hero-{{ section.id }}"
-  class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
+  class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}{% if section.settings.section_height == 'full-screen-minus-header' %} hero--full-screen-minus-header{% endif %}"
   style="
     --hero-border-style: {{ section.settings.border }};
     --hero-border-width: {{ section.settings.border_width }}px;
@@ -385,6 +385,8 @@
       --hero-min-height: {{ section.settings.section_height_custom }}svh;
     {% elsif section.settings.section_height == "full-screen" %}
        --hero-min-height: 100svh;
+    {% elsif section.settings.section_height == "full-screen-minus-header" %}
+       --hero-min-height: calc(100svh - var(--header-group-height, 0px));
     {% else %}
       --hero-min-height: var(--section-height-{{ section.settings.section_height }});
     {% endif %}
@@ -470,6 +472,11 @@
   /* Being extra specific in the selector for performance reasons */
   body:has(> #header-group > .header-section > #header-component) .hero-wrapper:first-child {
     --hero-height-offset: var(--header-group-height, 0);
+  }
+
+  /* Don't apply offset when using full-screen-minus-header since header is already subtracted */
+  body:has(> #header-group > .header-section > #header-component) .hero-wrapper:first-child .hero--full-screen-minus-header {
+    --hero-height-offset: 0px;
   }
 
   .hero {
@@ -1047,6 +1054,10 @@
         {
           "value": "full-screen",
           "label": "t:options.full_screen"
+        },
+        {
+          "value": "full-screen-minus-header",
+          "label": "t:options.full_screen_minus_header"
         },
         {
           "value": "custom",

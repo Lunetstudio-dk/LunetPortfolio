@@ -536,6 +536,7 @@
     "full_and_page_offset_left": "Full background, page-width content, offset left",
     "full_and_page_offset_right": "Full background, page-width content, offset right",
     "full_screen": "Full screen",
+    "full_screen_minus_header": "Full screen minus header",
     "full_frame": "Full frame",
     "gluten_free": "Gluten free",
     "gradient": "Gradient",
